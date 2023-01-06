@@ -1,4 +1,4 @@
-package com.bookit.utilities;
+package com.project_name.utilities;
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -15,6 +15,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 
 public class Driver {
@@ -87,6 +88,17 @@ public class Driver {
                     WebDriverManager.getInstance(SafariDriver.class).setup();
                     driverPool.set(new SafariDriver());
                     break;
+
+                case "headless-chrome":
+                    WebDriverManager.chromedriver().setup();
+                    ChromeOptions option=new ChromeOptions();
+                    option.setHeadless(true);
+                    driverPool.set(new ChromeDriver(option));
+                    driverPool.get().manage().window().maximize();
+                    driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    break;
+
+
             }
         }
         return driverPool.get();

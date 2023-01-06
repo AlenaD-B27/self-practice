@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.cydeo</groupId>
-    <artifactId>Bookit</artifactId>
+    <artifactId>project_name</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -71,6 +71,12 @@
         </dependency>
 
         <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>4.4.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.2.10</version>
@@ -81,6 +87,41 @@
             <artifactId>reporting-plugin</artifactId>
             <version>7.2.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>5.2.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.17.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.17.2</version>
+        </dependency>
+
+        <!--If you want to get rid of SLF4J Failed to load message from the console -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.32</version>
+        </dependency>
+
+
     </dependencies>
 
 
@@ -92,9 +133,15 @@
                 <version>3.0.0-M3</version>
                 <configuration>
                     <parallel>methods</parallel>
+                    <!--
                     <useUnlimitedThreads>true</useUnlimitedThreads>
+                    -->
+                    <threadCount>4</threadCount>
+                    <perCoreThreadCount>false</perCoreThreadCount>
                     <testFailureIgnore>true</testFailureIgnore>
+                    <!--
                     <runOrder>Alphabetical</runOrder>
+                    -->
                     <includes>
                         <include>**/*CukesRunner.java</include>
                     </includes>

@@ -1,9 +1,8 @@
-package com.bookit.step_definitions;
+package com.project_name.step_definitions;
 
-import com.bookit.utilities.ConfigurationReader;
-import com.bookit.utilities.Environment;
+import com.project_name.utilities.ConfigurationReader;
+import com.project_name.utilities.Environment;
 import io.cucumber.java.en.Given;
-import org.junit.Test;
 
 public class EnvironmentStepDefs {
 
@@ -30,11 +29,12 @@ public class EnvironmentStepDefs {
 
         // mvn test -Denvironment=qa3 -Dcucumber.filter.tags=@property -Dteacher_email=mike@smith.com -DbrowserEx=InternetExplorer
 
-        String browserEx=
-                System.getProperty("browserEx") != null ? browserEx = System.getProperty("browserEx")
+
+        String browserEx = System.getProperty("browserEx") != null ? browserEx = System.getProperty("browserEx")
                                                  : ConfigurationReader.getProperty("browserEx");
 
         System.out.println("browserEx = " + browserEx);
+
 
     }
 

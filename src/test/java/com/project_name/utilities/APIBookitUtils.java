@@ -1,4 +1,4 @@
-package com.bookit.utilities;
+package com.project_name.utilities;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -8,7 +8,7 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-public class BookitUtils {
+public class APIBookitUtils {
 
     public static String generateToken(String email, String password) {
 
@@ -25,7 +25,7 @@ public class BookitUtils {
     }
 
 
-    public static String generateTokenByRole(String role) {
+    public static String generateToken(String role) {
 
         //returnCredentials(role);
 

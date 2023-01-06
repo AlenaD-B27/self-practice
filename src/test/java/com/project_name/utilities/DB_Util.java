@@ -1,4 +1,4 @@
-package com.bookit.utilities;
+package com.project_name.utilities;
 
 import java.sql.*;
 import java.util.ArrayList;

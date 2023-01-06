@@ -1,7 +1,7 @@
-package com.bookit.step_definitions;
+package com.project_name.step_definitions;
 
-import com.bookit.utilities.DB_Util;
-import com.bookit.utilities.Driver;
+import com.project_name.utilities.DB_Util;
+import com.project_name.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
