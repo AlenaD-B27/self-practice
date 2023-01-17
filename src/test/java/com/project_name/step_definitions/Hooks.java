@@ -29,7 +29,7 @@ public class Hooks {
 	@Before("@ui")
 	public void setUp() {
 		// we put a logic that should apply to every scenario
-		Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 	}
 	
@@ -38,7 +38,7 @@ public class Hooks {
 		// only takes a screenshot if the scenario fails
 		if (scenario.isFailed()) {
 			// taking a screenshot
-			final byte[] screenshot = ((TakesScreenshot) Driver.get()).getScreenshotAs(OutputType.BYTES);
+			final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
 			scenario.attach(screenshot, "image/png","screenshot");
 		}
 		Driver.closeDriver();
