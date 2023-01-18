@@ -5,7 +5,9 @@ import com.project_name.pages.DemoQaElementsPage;
 import com.project_name.pages.DemoQaHomePage;
 import com.project_name.pages.DemoQaTextBoxPage;
 import com.project_name.utilities.BrowserUtils;
+import com.project_name.utilities.ConfigurationReader;
 import com.project_name.utilities.Driver;
+import com.project_name.utilities.Environment;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -23,6 +25,11 @@ public class Demoqa_stepDefs {
     DemoQaTextBoxPage textBoxPage = new DemoQaTextBoxPage();
 
 
+
+    @Given("As a user I open {string} homepage")
+    public void asAUserIOpenHomepage(String envName) {
+        Driver.getDriver().get(Environment.URL);
+    }
 
     @Given("As a user I open {string}")
     public void as_a_user_i_open(String url) {
@@ -90,4 +97,6 @@ public class Demoqa_stepDefs {
             }
         });
     }
+
+
 }
